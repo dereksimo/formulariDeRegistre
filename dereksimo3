@@ -1,0 +1,44 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Formulario JSP</title>
+</head>
+<body>
+
+    <h2>Registro Rápido</h2>
+
+    <!-- El atributo action vacío envía los datos a esta misma página -->
+    <form method="post" action="">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <hr>
+
+    <%
+        // Configurar codificación para aceptar tildes y eñes
+        request.setCharacterEncoding("UTF-8");
+
+        // Capturar los datos enviados por el formulario
+        String nombre = request.getParameter("nombre");
+        String email = request.getParameter("email");
+
+        // Mostrar el resultado solo si se ha enviado el formulario
+        if (nombre != null && email != null) {
+    %>
+        <h3>Datos recibidos:</h3>
+        <p><strong>Nombre:</strong> <%= nombre %></p>
+        <p><strong>Correo:</strong> <%= email %></p>
+    <%
+        }
+    %>
+
+</body>
+</html>
