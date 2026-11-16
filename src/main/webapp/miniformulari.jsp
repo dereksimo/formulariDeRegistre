@@ -105,7 +105,7 @@
 </head>
 <body>
 
-    <h2>Formulari de registre</h2>
+    <h2>Formulari de registre dereksimo</h2>
 
     <form action="" method="POST">
         
